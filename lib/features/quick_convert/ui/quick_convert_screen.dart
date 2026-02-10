@@ -56,35 +56,28 @@ class _QuickConvertScreenState extends State<QuickConvertScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 8.0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              'Quick Convert',
-              style: Theme.of(context).textTheme.headlineMedium,
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 16.0),
-            QuickConvertForm(onCalculate: _onCalculate),
-            if (_conversionResult.results.isNotEmpty ||
-                _conversionResult.equivalents.isNotEmpty ||
-                _conversionResult.weightConversions.isNotEmpty) ...[
-              const SizedBox(height: 24.0),
-              const Divider(),
-              const SizedBox(height: 16.0),
-              QuickConvertResults(
-                conversionResult: _conversionResult,
-                scrollController: _scrollController,
-              ),
-            ],
-          ],
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(
+          'Quick Convert',
+          style: Theme.of(context).textTheme.headlineMedium,
+          textAlign: TextAlign.center,
         ),
-      ),
+        const SizedBox(height: 16.0),
+        QuickConvertForm(onCalculate: _onCalculate),
+        if (_conversionResult.results.isNotEmpty ||
+            _conversionResult.equivalents.isNotEmpty ||
+            _conversionResult.weightConversions.isNotEmpty) ...[
+          const SizedBox(height: 24.0),
+          const Divider(),
+          const SizedBox(height: 16.0),
+          QuickConvertResults(
+            conversionResult: _conversionResult,
+            scrollController: _scrollController,
+          ),
+        ],
+      ],
     );
   }
 }
