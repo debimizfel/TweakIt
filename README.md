@@ -20,5 +20,7 @@ samples, guidance on mobile development, and a full API reference.
 TODO:
 - auto update on input
 - quitar el card y usar mas espacio
-- agregar fiel de a que tipo de conversion quiero 
+- agregar field de a que tipo de conversion quiero 
 - ingridient opcional si es que quiero convertir de volemn a peso
+- overfllow con el teclado
+- agergar placeholder en los fields del form
